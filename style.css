@@ -34,6 +34,19 @@ header {
   background-color: var(--nuit);
   color: var(--lueur);
   padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background-image:
     linear-gradient(
       rgba(16, 19, 13, 0.82) 0%,
@@ -44,9 +57,7 @@ header {
     url("images/entree.jpg");
   background-size: cover;
   background-position: center top;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  animation: zoomer 8s forwards;
 }
 
 .logo {
@@ -237,6 +248,15 @@ footer {
   }
 }
 
+@keyframes zoomer {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
 /* ===== Grand écran (à partir de 768px) ===== */
 
 @media (min-width: 768px) {
@@ -255,5 +275,14 @@ footer {
   }
   .hero-titre {
     font-size: 104px;
+  }
+}
+
+/* ===== Animations réduites ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  header::before,
+  .hero-titre {
+    animation: none;
   }
 }
