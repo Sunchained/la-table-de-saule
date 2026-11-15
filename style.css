@@ -153,6 +153,13 @@ h3 {
   letter-spacing: 3px;
 }
 
+#carte img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
 .plats {
   list-style: none;
   padding: 0;
