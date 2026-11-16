@@ -43,6 +43,7 @@ header {
 }
 
 header::before {
+  --photo: url("images/entree-mobile.webp");
   content: "";
   position: absolute;
   inset: 0;
@@ -54,7 +55,7 @@ header::before {
       rgba(16, 19, 13, 0.2) 55%,
       rgba(16, 19, 13, 0.88) 100%
     ),
-    url("images/entree.webp");
+    var(--photo);
   background-size: cover;
   background-position: center top;
   animation: zoomer 8s forwards;
@@ -128,7 +129,7 @@ nav a {
   letter-spacing: 1px;
 }
 
-/* ===== Contenu : commun aux trois sections ===== */
+/* ===== Contenu : commun aux sections ===== */
 
 #carte,
 #infos {
@@ -285,22 +286,25 @@ footer a {
 /* ===== Grand écran (à partir de 768px) ===== */
 
 @media (min-width: 768px) {
+  header::before {
+    --photo: url("images/entree.webp");
+  }
+  .logo {
+    font-size: 36px;
+  }
+  .hero-titre {
+    font-size: 104px;
+  }
   #carte,
   #infos {
     max-width: 640px;
     margin: 0 auto;
-  }
-  .logo {
-    font-size: 36px;
   }
   h2 {
     font-size: 40px;
   }
   .plat-nom {
     font-size: 22px;
-  }
-  .hero-titre {
-    font-size: 104px;
   }
 }
 
