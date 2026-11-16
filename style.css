@@ -54,7 +54,7 @@ header::before {
       rgba(16, 19, 13, 0.2) 55%,
       rgba(16, 19, 13, 0.88) 100%
     ),
-    url("images/entree.jpg");
+    url("images/entree.webp");
   background-size: cover;
   background-position: center top;
   animation: zoomer 8s forwards;
