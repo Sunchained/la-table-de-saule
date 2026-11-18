@@ -150,9 +150,8 @@ main a {
 
 h3 {
   color: var(--accent);
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  font-size: 26px;
+  font-style: italic;
 }
 
 #carte img {
@@ -305,6 +304,26 @@ footer a {
   }
   .plat-nom {
     font-size: 22px;
+  }
+}
+
+/* ===== Écran d'ordinateur (à partir de 1024px) ===== */
+
+@media (min-width: 1024px) {
+  .colonnes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  #carte,
+  #infos {
+    max-width: 1100px;
+  }
+  .deux-colonnes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
   }
 }
 
